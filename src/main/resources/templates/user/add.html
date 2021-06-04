@@ -1,9 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">//signifies to ide(intellij) that is a thymeleaf file
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/>
     <title></title>
 </head>
+<form method="post" th:action="@{/user}">
+    <div class="form-group">
+        <label> Username
+            <input type="text" name="username" class="form-control">
+        </label>
+    </div>
+    <div class="form-group">
+        <label> Email
+            <input type="email" name="email" class="form-control">
+        </label>
+    </div>
+    <div class="form-group">
+        <label> Password
+            <input type="password" name="password" class="form-control">
+            <input type="password" name="verify" class="form-control">
+            <p th:text="${error}"></p>
+        </label>
+        <input type="submit" value="Submit">
+    </div>
+</form>
 <body>
 
 </body>

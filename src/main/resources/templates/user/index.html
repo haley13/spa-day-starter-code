@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">//signifies to ide(intellij) that is a thymeleaf file
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/>
     <title></title>
 </head>
 <body>
+<p th:text="${reply}"></p>
+    <th:block th:each="user : ${user}">
+    </th:block>
+<a th:href="@{/}"></a>
 
 </body>
 </html>
