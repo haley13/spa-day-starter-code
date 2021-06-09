@@ -9,20 +9,18 @@ import java.util.ArrayList;
 
 
 @Controller
-@RequestMapping
 public class SpaDayController {
 
     @GetMapping
-    public String customerForm() {
-        return "serviceSelection";
+    public String displayClientForm (Model model) {
+        return "menu";
     }
 
     @PostMapping
-    public String spaMenu(@RequestParam String skintype, @RequestParam String manipedi, Model model) {
-
-        Client newClient = new Client(skintype, manipedi);
-        newClient.setAppropriateFacials(skintype);
-        model.addAttribute("client", newClient);
+    public String processClientForm(@RequestParam String skinType, @RequestParam String manipedi, Model model) {
+        Client newClient = new Client(skinType, manipedi);
+        newClient.setAppropriateFacials(skinType);
+        model.addAttribute("client" , newClient);
 
         return "menu";
     }
