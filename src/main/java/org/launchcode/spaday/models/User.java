@@ -4,17 +4,18 @@ import org.springframework.validation.Errors;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 public class User {
-    @NotBlank
+    @NotEmpty(message ="Please enter a username.")
     @Size(min=5, max=15, message ="Username must be between 5 and 15 characters.")
     private String username;
 
-    @Email
+    @Email(message = "Please provide a valid email address.")
     private String email;
 
-    @NotBlank
+    @NotEmpty(message = "Please enter a password.")
     @Size(min=6, message ="Password must be a minimum of 6 characters long.")
     private String password;
 

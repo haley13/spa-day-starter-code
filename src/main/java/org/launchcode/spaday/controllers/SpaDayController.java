@@ -9,11 +9,12 @@ import java.util.ArrayList;
 
 
 @Controller
+@RequestMapping
 public class SpaDayController {
 
     @GetMapping
     public String displayClientForm (Model model) {
-        return "menu";
+        return "serviceSelection";
     }
 
     @PostMapping

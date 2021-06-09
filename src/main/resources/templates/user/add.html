@@ -7,7 +7,8 @@
 <body>
     <form method="post" th:action="@{/user}">
         <label> Username
-            <input type="text" name="username" th:value="${username}">
+            <input type='text' name="username" th:value="${username}">
+            <span th:errors="${user.username}"></span>
         </label>
 
         <label> Email
@@ -19,10 +20,10 @@
         </label>
 
         <label> Verify Password:
-            <input type="password" name="verify">
+            <input type='password' name="verify">
         </label>
             <p th:text="${error}"></p>
-        <input type="submit" value="Submit">
+        <input type='submit' value="Sign up!">
     </form>
 
 </body>
